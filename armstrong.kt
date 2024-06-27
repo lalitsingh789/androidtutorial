@@ -1,16 +1,30 @@
 fun main() {
-    val number = 371
-    var originalNumber = number
-    var result = 0
+    val number = 153
+    var temp = number
+    var sum = 0
+    var digits = 0
 
-    while (originalNumber != 0) {
-        val remainder = originalNumber % 10
-        result += remainder * remainder * remainder
-        originalNumber /= 10
+    
+    while (temp != 0) {
+        digits++
+        temp /= 10
     }
 
-    if (result == number)
+    temp = number
+
+    
+    while (temp != 0) {
+        val digit = temp % 10
+        var powerSum = 1
+        for (i in 1..digits) {
+            powerSum *= digit
+        }
+        sum += powerSum
+        temp /= 10
+    }
+    if (sum == number) {
         println("$number is an Armstrong number.")
-    else
+    } else {
         println("$number is not an Armstrong number.")
+    }
 }
