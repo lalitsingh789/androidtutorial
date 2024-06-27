@@ -1,5 +1,5 @@
 fun main() {
-    val number = 153
+    val number = 370
     var temp = number
     var sum = 0
     var digits = 0
