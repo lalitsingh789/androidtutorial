@@ -1,13 +1,15 @@
 fun main() {
-    val str = "this is my first kotlin program"
-    val ch = 'o'  
-    var f = 0  
-
-    for (i in 0 until str.length) {  
-        if (ch == str[i]) {  
-            f++  
+    val input = "my first kotlin program"
+    val f = IntArray(256) { 0 } 
+    
+    for (char in input) {
+        val index = char.toInt()
+        f[index]++
+    }
+    
+    for (i in 0 until 256) {
+        if (f[i] != 0) {
+            println("${i.toChar()} : ${f[i]}")
         }
     }
-
-    println("Frequency of '$ch' = $f")
 }
